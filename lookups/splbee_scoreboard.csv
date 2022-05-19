@@ -1,6 +1,0 @@
-row,Question,Contestant,host,LatestSubmissionTime,Duration,Correct,Bonus
-1,1,Contestant1,host,9/28/16 19:45,0.425,1,100
-2,1,Contestant2,host,9/28/16 19:45,0.071,1,99
-3,1,Contestant3,host,9/28/16 19:46,0.04,1,98
-1,2,Contestant1,host,9/28/16 19:47,0.15,1,100
-2,2,Contestant2,host,9/28/16 19:48,0.15,0,0
