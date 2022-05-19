@@ -26,30 +26,3 @@ export = system
 
 [lookups]
 export = system
-
-[app/install/install_source_checksum]
-version = 8.2.6
-modtime = 1650047790.147488000
-
-[views/spling_bee_directions]
-owner = cmerriman
-version = 8.2.6
-modtime = 1650047946.990623000
-
-[nav/default]
-version = 9.0.2205
-modtime = 1652108852.164328000
-
-[views/spling_bee_content]
-owner = cmerriman
-version = 8.2.6
-modtime = 1650048102.208975000
-
-[views/leaderboard]
-owner = cmerriman
-version = 8.2.6
-modtime = 1650048237.472451000
-
-[views/participant_instructions]
-version = 9.0.2205
-modtime = 1652108873.343629000
