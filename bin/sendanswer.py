@@ -19,7 +19,7 @@ from splunklib.searchcommands import (
 class SendAnswerCommand(ReportingCommand):
     @Configuration()
     def map(self, records):
-        """map passes all incoming recoreds back out. This command has no real "map" functionality"""
+        """map passes all incoming records back out. This command has no real "map" functionality"""
         for record in records:
             yield record
 
