@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 import json
 import os
+import re
 import sys
 from random import choice
 
@@ -45,10 +46,21 @@ class SendAnswerCommand(ReportingCommand):
                 if entry_count > 0:
                     self.error_exit(None, "Unable to create answer event. More than one entry returned for current-context")
 
+                duration_ms = 0
+                # only top-level commands are counted
+                # sub-command durations are already accounted by their top-level command
+                duration_pattern = re.compile("^duration\.command\.[^.]+$")
+
+                for key, value in dict(self.search_results_info.countMap).items():
+                    if duration_pattern.search(key):
+                        duration_ms += int(value)
+
                 answer_record = {
                     "answer": record["answer"],
                     "username": entry["content"]["username"],
                     "realname": entry["content"]["realname"],
+                    "search": self.search_results_info.search,
+                    "duration_ms": duration_ms,
                 }
 
         if not answer_record:
