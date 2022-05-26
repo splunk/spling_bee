@@ -55,12 +55,31 @@ class SendAnswerCommand(ReportingCommand):
                     if duration_pattern.search(key):
                         duration_ms += int(value)
 
+                # need to set owner="nobody" to use kvstore
+                service = client.connect(owner="nobody", token=self.service.token, user="-", app="spling_bee")
+                table = service.kvstore["spling_bee_start"]
+                current_results = table.data.query(current=1)
+
+                current_category = None
+                current_question = None
+                for current_count, current_result in enumerate(current_results):
+                    if current_count > 0:
+                        self.error_exit(None, "Unable to create answer event. More than one spling_bee_start entry with current=1.")
+
+                    current_category = current_result["category"]
+                    current_question = current_result["question"]
+
+                if not (current_category and current_category):
+                    self.error_exit(None, "Unable to create answer event. No current category/question.")
+
                 answer_record = {
                     "answer": record["answer"],
                     "username": entry["content"]["username"],
                     "realname": entry["content"]["realname"],
                     "search": self.search_results_info.search,
                     "duration_ms": duration_ms,
+                    "category": current_category,
+                    "question": current_question,
                 }
 
         if not answer_record:
