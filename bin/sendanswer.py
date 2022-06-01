@@ -1,4 +1,5 @@
 from __future__ import absolute_import
+import base64
 import json
 import os
 import re
@@ -58,13 +59,17 @@ class SendAnswerCommand(ReportingCommand):
                 # need to set owner="nobody" to use kvstore
                 service = client.connect(owner="nobody", token=self.service.token, user="-", app="spling_bee")
                 table = service.kvstore["spling_bee_start"]
-                current_results = table.data.query(current=1)
+                current_results = table.data.query(query={"current":1})
 
                 current_category = None
                 current_question = None
                 for current_count, current_result in enumerate(current_results):
                     if current_count > 0:
-                        self.error_exit(None, "Unable to create answer event. More than one spling_bee_start entry with current=1.")
+                        current_results_json_string = json.dumps(current_results)
+                        current_results_json_bytes = current_results_json_string.encode()
+                        current_results_json_b64_bytes = base64.b64encode(current_results_json_bytes)
+                        current_results_json_b64_string = current_results_json_b64_bytes.decode()
+                        self.error_exit(None, f"Unable to create answer event. More than one spling_bee_start entry with current=1: {current_results_json_b64_string}")
 
                     current_category = current_result["category"]
                     current_question = current_result["question"]
