@@ -26,3 +26,9 @@ export = system
 
 [lookups]
 export = system
+
+
+### COMMANDS
+
+[commands]
+export = system
