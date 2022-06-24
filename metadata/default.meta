@@ -37,3 +37,8 @@ owner = nobody
 access = read : [ * ], write : [ admin, spling_bee_admin ]
 export = none
 owner = nobody
+
+### COMMANDS
+
+[commands]
+export = system
