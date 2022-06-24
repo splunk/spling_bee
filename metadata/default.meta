@@ -25,4 +25,15 @@ export = system
 ### LOOKUPS
 
 [lookups]
+access = read : [ * ], write : [ admin, spling_bee_admin ]
 export = system
+owner = nobody
+
+
+### Dashboards
+
+# Participant Instructions
+[views/participant_instructions]
+access = read : [ * ], write : [ admin, spling_bee_admin ]
+export = none
+owner = nobody
