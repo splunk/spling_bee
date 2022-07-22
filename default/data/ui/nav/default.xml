@@ -2,6 +2,6 @@
   <view name="search" />
   <view name="spling_bee_directions"  />
     <view name="participant_instructions" default='true' />
-  <a href="https://splingbee-build.splunk.show/en-US/app/timer-vis-app/start?dashboardid=spling_bee_content">Play</a>
+  <a href="/en-US/app/timer-vis-app/start?dashboardid=spling_bee_content">Play</a>
   <view name="leaderboard" />
 </nav>
