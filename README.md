@@ -6,3 +6,8 @@ The SPLBee Contestant App provides an interface in which to conduct SPL'ing Bees
 Directions:
 
 Please let us know if you have any questions or feedback. 
+
+
+## Additional Resources
+
+User Creation: Bulk User Creation Script (Coming Soon)
