@@ -1,4 +1,3 @@
-
 # Application-level permissions
 
 []
@@ -25,10 +24,21 @@ export = system
 ### LOOKUPS
 
 [lookups]
+access = read : [ * ], write : [ admin, spling_bee_admin ]
 export = system
+owner = nobody
 
+
+### Dashboards
+
+# Participant Instructions
+[views/contestant_instructions]
+access = read : [ * ], write : [ admin, spling_bee_admin ]
+export = none
+owner = nobody
 
 ### COMMANDS
 
 [commands]
 export = system
+
