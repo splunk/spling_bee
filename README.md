@@ -1,9 +1,9 @@
 
 # SPLing Bee Contestant App
 
-The SPLBee Contestant App provides an interface in which to conduct SPL'ing Bees. The App includes a Real-time Scoring/Judging dashboard, Lookup Tables for questions and answers and directions on how to run the Bee.
+The SPLBee Contestant App provides an interface in which contestants can participate in SPLing Bees. 
 
-Directions:
+We have the latest version of the app in the [Releases section of this repository](https://github.com/splunk/spling_bee/releases)
 
 Please let us know if you have any questions or feedback. 
 
